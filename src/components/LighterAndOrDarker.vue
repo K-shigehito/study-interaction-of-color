@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent, ref, computed } from '@vue/runtime-core';
-import { useTransition, TransitionPresets } from '@vueuse/core';
+import { useTransition } from '@vueuse/core';
 
 export default defineComponent({
   setup() {
@@ -24,6 +24,12 @@ export default defineComponent({
     const toggleTransition = () => {
       baseNumber.value = baseNumber.value === 20 ? 0 : 20;
     };
+    const toggleColorPosition = () => {
+      [firstColor.value, secondColor.value] = [
+        secondColor.value,
+        firstColor.value,
+      ];
+    };
 
     return {
       firstColor,
@@ -33,6 +39,7 @@ export default defineComponent({
       transitionSpeed,
       translateNumber,
       toggleTransition,
+      toggleColorPosition,
     };
   },
 });
@@ -230,6 +237,7 @@ export default defineComponent({
     <button
       type="button"
       class="
+        mr-[8px]
         px-[12px]
         py-[4px]
         rounded-[4px]
@@ -240,6 +248,20 @@ export default defineComponent({
       @click="toggleTransition"
     >
       move
+    </button>
+    <button
+      type="button"
+      class="
+        px-[12px]
+        py-[4px]
+        rounded-[4px]
+        text-gray-100
+        bg-gray-600
+        hover:opacity-90
+      "
+      @click="toggleColorPosition"
+    >
+      change
     </button>
     <div class="mt-[8px]">
       color A：
