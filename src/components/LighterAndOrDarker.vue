@@ -4,12 +4,12 @@ import { useTransition } from '@vueuse/core';
 
 export default defineComponent({
   setup() {
-    const firstColor = ref('');
+    const firstColor = ref('#F5F5F5');
     const firstColorStyle = computed(() =>
       firstColor.value ? `background-color: ${firstColor.value}` : ''
     );
 
-    const secondColor = ref('');
+    const secondColor = ref('#DCDCDC');
     const secondColorStyle = computed(() =>
       secondColor.value ? `background-color: ${secondColor.value}` : ''
     );

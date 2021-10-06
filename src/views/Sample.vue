@@ -1,10 +1,12 @@
 <script lang="ts">
 import { defineComponent } from '@vue/runtime-core';
-import LighterAndOrDarkerVue from '../components/LighterAndOrDarker.vue';
+import LighterAndOrDarker from '../components/LighterAndOrDarker.vue';
+import ReversedGrounds from '../components/ReversedGrounds.vue';
 
 export default defineComponent({
   components: {
-    LighterAndOrDarkerVue,
+    LighterAndOrDarker,
+    ReversedGrounds,
   },
 });
 </script>
@@ -12,7 +14,13 @@ export default defineComponent({
   <div class="m-[12px]">
     <h2 class="text-[24px] font-bold">Lighter and / or darker</h2>
     <div class="mt-[12px]">
-      <LighterAndOrDarkerVue />
+      <LighterAndOrDarker />
+    </div>
+  </div>
+  <div class="mt-[40px] m-[12px]">
+    <h2 class="text-[24px] font-bold">looking like the reversed grounds</h2>
+    <div class="mt-[12px]">
+      <ReversedGrounds />
     </div>
   </div>
 </template>
